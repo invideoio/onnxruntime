@@ -18,4 +18,6 @@ elif [[ "$*" == *"--android"* ]]; then
     DIR_OS="Android"
 fi
 
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+
 python3 $DIR/tools/ci_build/build.py --build_dir $DIR/build/$DIR_OS "$@"
